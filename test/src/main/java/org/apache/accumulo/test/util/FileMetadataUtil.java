@@ -68,8 +68,9 @@ public class FileMetadataUtil {
           StoredTabletFile file = fileEntry.getKey();
           DataFileValue dfv = fileEntry.getValue();
           files.put(file, dfv);
-          log.debug("Extent: {}; File: {}; Entries: {}; Size: {}", tabletMetadata.getExtent(), file,
-              dfv.getNumEntries(), dfv.getSize());
+          log.debug("Extent: " + tabletMetadata.getExtent() + "; File Name: " + file.getFileName()
+              + "; Range: " + file.getRange() + "; Entries: " + dfv.getNumEntries() + ", Size: "
+              + dfv.getSize());
           i++;
         }
       }
